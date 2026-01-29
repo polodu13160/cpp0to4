@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 16:49:41 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/17 12:34:39 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/21 13:50:19 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap :  public FragTrap, public ScavTrap
+class DiamondTrap :  virtual public FragTrap, public ScavTrap
 {
 private: 
     std::string _name;

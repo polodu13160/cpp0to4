@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:22:34 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/15 16:30:17 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:13:43 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_point(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout << "ClapTrap " << _name << " initialized" << std::endl;
+     std::cout << "ClapTrap " << _name << " initialized" << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name), _hit_point(other._hit_point), _energy_points(other._energy_points), _attack_damage(other._attack_damage)
 {

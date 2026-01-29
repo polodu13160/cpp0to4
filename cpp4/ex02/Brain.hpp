@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Created: 2026/01/19 11:46:02 by pde-petr          #+#    #+#             */
+/*   Updated: 2026/01/21 00:45:42 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "DiamondTrap.hpp"
+#ifndef HPP_BRAIN
+#define HPP_BRAIN
+#include "string"
 
-int main()
+class Brain 
 {
-    ClapTrap tutu("toto");
-    ScavTrap toto("tutu");
-    DiamondTrap fefe("fefe");
-    DiamondTrap trutut("A");
-    DiamondTrap ijfi("B");
+    private :
+        std::string _ideas[100];
+    public :
+    Brain();
+    Brain(const Brain &cpy);
+    Brain &operator=(const Brain &cpy);
+    ~Brain();
+    void setIdeas(std::string key, int index);
+    std::string getIdeas(int index) const;
+    
+};
 
-    trutut = ijfi;
-
-   trutut.whoAmI();
-
-   fefe.whoAmI();
-   fefe.attack("pioupiou");
-}
+#endif

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Created: 2026/01/22 00:27:18 by pde-petr          #+#    #+#             */
+/*   Updated: 2026/01/29 14:34:28 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "DiamondTrap.hpp"
-
-int main()
+#ifndef HPP_CURE
+#define HPP_CURE
+#include "AMateria.hpp"
+class Cure : public AMateria
 {
-    ClapTrap tutu("toto");
-    ScavTrap toto("tutu");
-    DiamondTrap fefe("fefe");
-    DiamondTrap trutut("A");
-    DiamondTrap ijfi("B");
+private:
+public:
+    Cure();
+    Cure(const Cure &cpy);
+    Cure &operator=(const Cure &cpy);
+    ~Cure();
+    AMateria *clone() const;
+    void use(ICharacter &target);
+};
 
-    trutut = ijfi;
-
-   trutut.whoAmI();
-
-   fefe.whoAmI();
-   fefe.attack("pioupiou");
-}
+#endif

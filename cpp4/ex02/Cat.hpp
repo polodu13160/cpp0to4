@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Created: 2026/01/17 13:55:39 by pde-petr          #+#    #+#             */
+/*   Updated: 2026/01/21 00:54:05 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "DiamondTrap.hpp"
 
-int main()
+#ifndef HPP_CAT
+#define HPP_CAT
+
+#include "string"
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+class Cat : public Animal
 {
-    ClapTrap tutu("toto");
-    ScavTrap toto("tutu");
-    DiamondTrap fefe("fefe");
-    DiamondTrap trutut("A");
-    DiamondTrap ijfi("B");
+    private: 
+        Brain* _ideas;
+    public: 
+        Cat();
+        const std::string getType() const;
+        Cat &operator=(const Cat cpy);
+        Cat(const Cat &cpy); 
+        ~Cat();
+        void makeSound() const;
+};
 
-    trutut = ijfi;
-
-   trutut.whoAmI();
-
-   fefe.whoAmI();
-   fefe.attack("pioupiou");
-}
+#endif

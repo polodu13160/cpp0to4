@@ -1,8 +1,8 @@
 .PHONY : init all re clean fclean
 CXX = c++
-FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98 -I.
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98 -I.
 NAME = Open
-CLASSES = ClapTrap ScavTrap FragTrap DiamondTrap
+CLASSES = AMateria Ice Cure interfaces/ICharacter interfaces/IMateriaSource Character MateriaSource
 FILES = main
 OBJ_DIR = .build/
 SRCS = $(addsuffix .cpp, $(CLASSES)) $(addsuffix .cpp,$(FILES))

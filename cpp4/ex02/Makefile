@@ -2,7 +2,7 @@
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98 -I.
 NAME = Open
-CLASSES = ClapTrap ScavTrap FragTrap
+CLASSES = Animal Dog Cat Brain
 FILES = main
 OBJ_DIR = .build/
 SRCS = $(addsuffix .cpp, $(CLASSES)) $(addsuffix .cpp,$(FILES))

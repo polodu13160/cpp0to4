@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Created: 2026/01/22 00:12:52 by pde-petr          #+#    #+#             */
+/*   Updated: 2026/01/29 16:08:15 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "DiamondTrap.hpp"
+#ifndef HPP_AMATERIA
+#define HPP_AMATERIA
 
-int main()
+#include "string"
+
+
+class ICharacter;
+
+class AMateria 
 {
-    ClapTrap tutu("toto");
-    ScavTrap toto("tutu");
-    DiamondTrap fefe("fefe");
-    DiamondTrap trutut("A");
-    DiamondTrap ijfi("B");
+protected:
+    std::string _type;
 
-    trutut = ijfi;
+public:
+    AMateria(std::string const &type);
+    AMateria();
+    AMateria &operator=(AMateria &cpy);
+    virtual ~AMateria(); 
+    std::string const &getType() const;
+    virtual AMateria *clone() const = 0;
+    virtual void use(ICharacter &target);
 
-   trutut.whoAmI();
+private:
+};
 
-   fefe.whoAmI();
-   fefe.attack("pioupiou");
-}
+#endif

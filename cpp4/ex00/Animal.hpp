@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Created: 2026/01/17 13:49:23 by pde-petr          #+#    #+#             */
+/*   Updated: 2026/01/20 18:29:50 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "DiamondTrap.hpp"
+#ifndef HPP_ANIMAL
+#define HPP_ANIMAL
 
-int main()
+#include "string"
+
+class Animal
 {
-    ClapTrap tutu("toto");
-    ScavTrap toto("tutu");
-    DiamondTrap fefe("fefe");
-    DiamondTrap trutut("A");
-    DiamondTrap ijfi("B");
+    protected:
+        std::string _type;
+    public: 
+        Animal();
+        Animal(Animal &cpy);
+        const std::string getType() const;
+        Animal &operator=(const Animal &cpy);
+        virtual ~Animal();
+        virtual void makeSound() const;
+};
 
-    trutut = ijfi;
-
-   trutut.whoAmI();
-
-   fefe.whoAmI();
-   fefe.attack("pioupiou");
-}
+#endif

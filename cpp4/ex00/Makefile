@@ -2,7 +2,7 @@
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98 -I.
 NAME = Open
-CLASSES = ClapTrap 
+CLASSES = Animal Dog Cat WrongCat WrongAnimal
 FILES = main
 OBJ_DIR = .build/
 SRCS = $(addsuffix .cpp, $(CLASSES)) $(addsuffix .cpp,$(FILES))
@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(FLAGS) $(OBJS) -o $(NAME) 
 -include $(DEPS)
 
-create_files:
+create_files: 
 	@for file in $(SRCS) $(addsuffix .hpp, $(CLASSES)) ; do \
 		if [ ! -f $$file ]; then \
 		mkdir -p $$(dirname $$file); \
