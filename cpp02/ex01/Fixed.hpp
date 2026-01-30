@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-petr <pde-petr@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:30:55 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/12 14:51:02 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/30 23:39:25 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Fixed
 {
 public:
     Fixed();
-    Fixed(int value);
-    Fixed(float value);
+    Fixed(const int value);
+    Fixed(const float value);
     Fixed(const Fixed &newFixed);
     Fixed &operator=(const Fixed &cpy);
     ~Fixed();
@@ -30,8 +30,8 @@ public:
     void setRawBits(int const raw);
     
 private:
-    int fixedPoint;
-    static const int size;
+    int _fixedPoint;
+    static const int _fractionalBits;
 };
 
 std::ostream &operator<<(std::ostream &cout, Fixed const &value);

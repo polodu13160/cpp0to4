@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-petr <pde-petr@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:30:55 by pde-petr          #+#    #+#             */
-/*   Updated: 2025/12/25 17:22:23 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:54:26 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
     void setRawBits(int const raw);
     
 private:
-    int fixedPoint;
-    static const int size;
+    int _fixedPoint;
+    static const int _numberFractionalBits;
 };
 
 #endif
