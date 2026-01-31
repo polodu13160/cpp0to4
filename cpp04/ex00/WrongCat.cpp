@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 15:25:34 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/20 18:31:14 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:22:14 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongCat::WrongCat()
     _type = "WrongCat";
     std::cout << "WrongCat is created" << std::endl;
 }
-WrongCat::WrongCat(WrongCat &cpy)
+WrongCat::WrongCat(const WrongCat &cpy)
 {
     _type = cpy._type;
     std::cout << "WrongCat copy is created" << std::endl;

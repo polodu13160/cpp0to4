@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 15:22:47 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/20 18:29:13 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:22:21 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal
     public: 
         WrongCat();
         const std::string getType() const;
-        WrongCat(WrongCat &cpy); 
+        WrongCat(const WrongCat &cpy); 
         ~WrongCat();
         WrongCat &operator=(const WrongCat &cpy);
         void makeSound() const;
