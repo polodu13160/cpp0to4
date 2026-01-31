@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:13:09 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:39:43 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int main()
     DiamondTrap fefe("fefe");
     DiamondTrap trutut("A");
     DiamondTrap ijfi("B");
+    DiamondTrap test(trutut);
+
+     test.whoAmI();
 
     trutut = ijfi;
 

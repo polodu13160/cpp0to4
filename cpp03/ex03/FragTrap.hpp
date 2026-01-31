@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 16:32:32 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/21 14:10:41 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:31:44 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@
 
 class FragTrap : virtual public ClapTrap
 {
-private: 
+private:
     std::string _name;
+
 protected:
-    int _hit_point;
-    int _attack_damage;
+    static const int base_hit_point;
+    static const int base_energy_points;
+    static const int base_attack_damage;
 
 public:
     FragTrap(std::string _name);
     FragTrap(const FragTrap &other);
     ~FragTrap();
-    
+    FragTrap &operator=(const FragTrap &other);
+
     void highFivesGuys(void);
 };
 

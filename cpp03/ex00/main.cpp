@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 15:19:59 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/15 15:28:54 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:09:59 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     ClapTrap tutu("toto");
-    ClapTrap toto = tutu;
+    ClapTrap toto("tutu");
 
     tutu.attack("mouse");
     toto.attack("mouse");

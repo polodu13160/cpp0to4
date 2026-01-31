@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 16:32:32 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/15 16:39:01 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:31:34 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
     ~FragTrap();
     
     void highFivesGuys(void);
+    FragTrap &operator=(const FragTrap &other);
+    
 };
 
 #endif

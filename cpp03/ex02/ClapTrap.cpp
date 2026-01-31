@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:22:34 by pde-petr          #+#    #+#             */
-/*   Updated: 2026/01/17 11:48:18 by pde-petr         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:08:29 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
     return *this;
 }
 
+
 void ClapTrap::attack(const std::string &target)
 {
-    if (_energy_points > 0)
+    if (_energy_points > 0 && _hit_point > 0)
     {
         std::cout << "ClapTrap " << _name << " attacks " << target
                   << ", causing " << _attack_damage << " points of damage!" << std::endl;
@@ -42,26 +43,32 @@ void ClapTrap::attack(const std::string &target)
     }
     else
         std::cout << "ClapTrap " << _name << " doesn't attack " << target
-                  << " because he has no energy points" << std::endl;
-}
-
-void ClapTrap::takeDamage(unsigned int amount)
-{
-     std::cout << "ClapTrap " << _name << " take dommage " << amount << std::endl;
+                  << " because he has no energy points or no hit point" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_energy_points > 0)
+    if (_energy_points > 0 && _hit_point > 0)
     {
         std::cout << "ClapTrap " << _name << " repairs itself of " << amount << std::endl;
         _energy_points--;
     }
     else
         std::cout << "ClapTrap " << _name << " doesn't repair itself of " << amount
-                  << " because he has no energy points" << std::endl;
+                  << " because he has no energy points or no hit point" << std::endl;
 }
 
+void ClapTrap::takeDamage(unsigned int amount)
+{
+    if (_hit_point > 0)
+    {
+         std::cout << "ClapTrap " << _name << " take dommage " << amount << std::endl;
+    _hit_point -= amount;
+    }
+    else    
+        std::cout << "ClapTrap " << _name << " is dead and not take more damage " << amount << std::endl;
+   
+}
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
